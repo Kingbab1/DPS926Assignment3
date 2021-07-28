@@ -1,0 +1,23 @@
+.toolbar {
+    --background: #3880ff;
+    --color: #FFFFFF;
+}
+
+.label {
+    font-size: 20px;
+}
+
+.back {
+    --color: #FFFFFF;
+}
+
+div {
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center {
+    justify-content: center;
+}

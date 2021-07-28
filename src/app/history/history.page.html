@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-title class="label">History</ion-title>
+    <ion-buttons  slot="start">
+      <ion-back-button class="toolbar"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div>
+    <ion-label class="topInfo"> Order History </ion-label>
+  </div>
+  <ion-list style="padding-right: 20px;" *ngFor="let historyItem of orderHistory" >
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-align-items-start">
+            <div>
+              <ion-label class="Red"> Ordered On: {{historyItem.date}}</ion-label>
+              <ion-label class="Red"> Total Price: ${{historyItem.totalPrice}}</ion-label>
+            </div>
+          </ion-col>
+          <ion-col class="ion-align-items-end">
+            <div class="ion-align-items-end">
+              <ion-label class="fontFix"># of Pizzas {{historyItem.totalNumber}}</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-title class="label">Manager</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="toolbar"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div>
+    <ion-grid>
+
+      <ion-row class="center">
+        <ion-button expand="full" (click)="checkCurrentOrderClicked()" size="large">Check Current order</ion-button> 
+      </ion-row>
+
+      <ion-row class="center">
+        <ion-button expand="full" (click)="updateOrderClicked()" size="large">Update Current Order</ion-button>
+      </ion-row>
+
+      <ion-row class="center">
+        <ion-button expand="full" (click)="historyClicked()" size="large">Previous Orders</ion-button>
+      </ion-row>
+
+      <ion-row class="center">
+        <ion-button expand="full" (click)="newOrderClicked()" size="large">New Order</ion-button>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+  
+</ion-content>

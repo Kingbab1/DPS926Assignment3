@@ -1,0 +1,55 @@
+.toolbar {
+    --background: #3880ff;
+    --color: #FFFFFF;
+}
+
+.label {
+    font-size: 20px;
+}
+
+.back {
+    --color: #FFFFFF;
+}
+
+.centerLabel {
+    font-size: 20px;
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topInfo {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DeleteButton {
+    background-color: #303030;
+    border-radius: 9%;
+}
+
+.bottom-Button {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+}
+
+.Red {
+    --color: red;
+}
+
+.topInfo {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5%;
+}

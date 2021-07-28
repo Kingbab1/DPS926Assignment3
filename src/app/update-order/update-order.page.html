@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-title class="label">Current Order</ion-title>
+    <ion-buttons  slot="start">
+      <ion-back-button class="toolbar"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="selectedOrder !== undefined" (click)="deleteClicked()" color="danger" class="DeleteButton">
+        Delete
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div>
+  <ion-label class="topInfo"> Total Cost: ${{totalCost}}</ion-label>
+</div>
+<div>
+  <ion-label class="topInfo"># of pizzas: [ {{totalNum}} ]</ion-label>
+</div>
+  <ion-list *ngFor="let orderItem of currentOrderList" style="padding-left: 2%; padding-right: 2%;">
+    <ion-item (click)="itemSelected(orderItem)" [class.selected]="orderItem.selected === true">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              <ion-label class="fontFix"> Toppings: {{orderItem.topping.name}}</ion-label>
+              <ion-label class="fontFix"> Size: {{orderItem.size.name}}</ion-label>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <ion-label class="fontFixend">  Price: ${{orderItem.totalPrice}}</ion-label>
+              <ion-label class="fontFixend"> quantity: {{orderItem.quantity}}</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

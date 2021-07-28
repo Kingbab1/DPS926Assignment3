@@ -1,0 +1,134 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color = "primary">
+      Pizaa App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-app>
+  <ion-header>
+      <ion-toolbar color = "primary">
+          <ion-title>
+              Pizza App
+          </ion-title>
+      </ion-toolbar>
+  </ion-header>
+  <ion-content>
+      <ion-grid>
+        <!-- First Row -->
+          <ion-row>
+            <ion-col size-sm="3" >
+            <ion-grid>
+              <ion-row >
+                <img class="image" src="https://lasliceislandia.com/wp-content/uploads/2021/01/La-Slice-Logo-light.png" alt="Italian Trulli">
+                </ion-row>
+                <ion-row>
+                  <div>
+                    {{ quantity }}
+                  </div>
+                </ion-row>
+            </ion-grid>
+          </ion-col>
+              <ion-col size-sm="3" offset-sm="3">
+                <ion-button expand="block" (click)="myOrderClicked()">My Order</ion-button>
+              </ion-col>
+          </ion-row>
+          <!-- Second Row -->
+          <ion-row>
+            <ion-col size-sm="3">
+              <ion-button color="light" (click)="numberClicked(1)" expand="block">1</ion-button>
+            </ion-col>
+            <ion-col size-sm="3" >
+              <ion-button color="light" (click)="numberClicked(2)" expand="block">2</ion-button>
+            </ion-col>
+            <ion-col size-sm="3" >
+              <ion-button color="light" (click)="numberClicked(3)" expand="block">3</ion-button>
+            </ion-col>
+            <ion-col size-sm="3">
+
+            </ion-col>
+          </ion-row>
+
+          <!-- Third Row -->
+          <ion-row>
+            <ion-col size-sm="3">
+              <ion-button color="light" (click)="numberClicked(4)" expand="block">4</ion-button>
+            </ion-col>
+            <ion-col size-sm="3" >
+              <ion-button color="light" (click)="numberClicked(5)" expand="block">5</ion-button>
+            </ion-col>
+            <ion-col size-sm="3" >
+              <ion-button color="light" (click)="numberClicked(6)" expand="block">6</ion-button>
+            </ion-col>
+            <ion-col size-sm="3">
+              
+            </ion-col>
+          </ion-row>
+
+          <!-- Third Row -->
+          <ion-row>
+            <ion-col size-sm="3">
+              <ion-button color="light" (click)="numberClicked(7)" expand="block">7</ion-button>
+            </ion-col>
+            <ion-col size-sm="3" >
+              <ion-button color="light" (click)="numberClicked(8)" expand="block">8</ion-button>
+            </ion-col>
+            <ion-col size-sm="3" >
+              <ion-button color="light" (click)="numberClicked(9)" expand="block">9</ion-button>
+            </ion-col>
+            <ion-col size-sm="3">
+              
+            </ion-col>
+          </ion-row>
+          
+          <!-- Fourth Row -->
+          <ion-row>
+            <ion-col size-sm="3">
+              <ion-button color="danger" (click)="resetClicked()" expand="block">Reset</ion-button>
+            </ion-col>
+            <ion-col size-sm="3" >
+              <ion-button color="light" (click)="numberClicked(0)"expand="block">0</ion-button>
+            </ion-col>
+            <ion-col size-sm="3" >
+              <ion-button color="success" (click)="addClicked()" expand="block">Add</ion-button>
+            </ion-col>
+            <ion-col size-sm="3">
+              
+            </ion-col>
+          </ion-row>
+
+          <!-- Fifth Row -->
+          <ion-row style="padding-top: 10%; padding-right: 20px; font-weight: bold;">
+            <ion-col size-sm="2">
+              <div> {{ toppings }} </div>
+            </ion-col>
+            <ion-col size-sm="3" >
+              <div> {{ size }} </div>
+            </ion-col>
+          </ion-row>
+
+          <!-- Sixth Row -->
+          <ion-row >
+          <ion-col size-md="6">
+          <ion-list ion-item [class.highlight]="topping.selected === true" *ngFor="let topping of toppingSelection">
+            <ion-item [ngClass]="{'selected' : topping.selected}" (click)="selectTopping(topping)">
+              <ion-label>{{topping.name}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+
+        <ion-col size-md="6">
+          <ion-list *ngFor="let size of sizeSelection">
+            <ion-item [ngClass]="{'selected' : size.selected}" (click)="selectSize(size)">
+              <ion-label>{{size.name}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+     
+  </ion-grid>
+  </ion-content>
+
+</ion-app>
